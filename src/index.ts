@@ -1,4 +1,7 @@
 import {expand} from "./conversion/expand";
+import {compress} from "./conversion/compress";
+import {termToId} from "./context/termToId";
+import {initCBORLDState, loadExternalContext} from "./context/contextLoader";
 
 const VP = {
   "@context": ["https://www.w3.org/2018/credentials/v1"],
@@ -47,8 +50,13 @@ const VP = {
 };
 
 async function main() {
-  const expanded_VP = await expand(VP);
-  console.log("Expanded:", JSON.stringify(expanded_VP, null, 2));
+  // 1. Context 전개 및 병합
+  const expanded = await expand(VP);
+  console.log("✅ Expanded:\n", JSON.stringify(expanded, null, 2));
+
+  // 2. CBOR-LD 스타일로 키워드 압축
+  const compressed = compress(expanded, termToId);
+  console.log("🗜️ Compressed:\n", JSON.stringify(compressed, null, 2));
 }
 
-main();
+main().catch(console.error);
