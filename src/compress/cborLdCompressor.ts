@@ -1,4 +1,7 @@
 // CBOR 인코딩
+import * as fs from "fs";
+import * as path from "path";
+
 export function encodeUnsignedInt(value: number): number[] {
   if (value < 24) return [value];
   if (value < 256) return [0x18, value];
@@ -214,8 +217,35 @@ export function compressToCborLd(jsonld: any, registryEntryId = 1): Uint8Array {
     termMap,
     termTable
   );
+
+  // ✅ 최소 구조로 감쌈
+  const wrappedPayload = {
+    _c: compressedJson, // 필수
+    _tm: termMap, // 최소한으로 필요한 맵
+  };
+
+  // ✅ CBOR 인코딩
   const prefix = getVarintStructure(registryEntryId);
-  const suffix = encodeCBOR(compressedJson);
+  const suffix = encodeCBOR(wrappedPayload); // ✅ _c와 _tm만 포함
 
   return new Uint8Array([...prefix, ...suffix]);
+}
+
+//typeTable, termTalbe 따로 저장
+export function exportCompressionTables(jsonld: any, outDir = "./tables") {
+  const typeTable = generateTypeTableFromJsonLD(jsonld);
+  const termTable = generateTermTableFromJsonLD(jsonld);
+
+  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, {recursive: true});
+
+  fs.writeFileSync(
+    path.join(outDir, "typeTable.json"),
+    JSON.stringify(typeTable, null, 2)
+  );
+  fs.writeFileSync(
+    path.join(outDir, "termTable.json"),
+    JSON.stringify(termTable, null, 2)
+  );
+
+  console.log("✅ Compression tables saved.");
 }

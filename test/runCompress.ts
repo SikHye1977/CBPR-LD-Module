@@ -1,4 +1,7 @@
-import {compressToCborLd} from "../src/compress/cborLdCompressor";
+import {
+  compressToCborLd,
+  exportCompressionTables,
+} from "../src/compress/cborLdCompressor"; // ✅ export 함수도 import
 
 const VP = {
   "@context": ["https://www.w3.org/2018/credentials/v1"],
@@ -53,6 +56,9 @@ const originalSize = new TextEncoder().encode(jsonString).length;
 // 압축
 const compressed = compressToCborLd(VP);
 const compressedSize = compressed.length;
+
+// 테이블 저장
+exportCompressionTables(VP, "./tables");
 
 // 결과 출력
 console.log("compressed:\n", compressed);

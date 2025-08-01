@@ -1,0 +1,25 @@
+{
+  "@type": {
+    "VerifiablePresentation": 1,
+    "VerifiableCredential": 2,
+    "Ticket": 3,
+    "Ed25519Signature2020": 4
+  },
+  "url": {
+    "https://www.w3.org/2018/credentials/v1": 1,
+    "https://schema.org/docs/jsonldcontext.jsonld": 2
+  },
+  "none": {
+    "aa7c429d-b717-40b6-a4dc-696bd75a873b": 1,
+    "did:sov:VV9pK5ZrLPRwYmotgACPkC": 2,
+    "Gtw58xLhejueHwEZtbmmQ5": 3,
+    "5ea83195-c279-4207-b23d-315c45bb8cfb": 4,
+    "vcData.reservedTicket.ticketToken": 5,
+    "Additional Concert 1": 6,
+    "2025-05-18T10:17:46.736Z": 7,
+    "GXUnLHyrYogGzyeiFLXdLv9EjEy8ZJN7XFnuSuN3Dn9M#keys-1": 8,
+    "did:sov:Gtw58xLhejueHwEZtbmmQ5": 9,
+    "2025-05-18T10:45:44.971Z": 10,
+    "did:sov:Gtw58xLhejueHwEZtbmmQ5#key-1": 11
+  }
+}

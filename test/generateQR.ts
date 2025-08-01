@@ -59,6 +59,7 @@ const base64 = Buffer.from(gzipped).toString("base64");
 
 // 🔹 4. QR 코드 생성 (터미널 출력)
 QRCode.toString(base64, {type: "terminal"}, (err, qr) => {
+  console.log(base64);
   if (err) {
     console.error("❌ QR 생성 실패:", err);
     return;

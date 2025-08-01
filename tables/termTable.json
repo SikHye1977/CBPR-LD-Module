@@ -1,0 +1,21 @@
+{
+  "id|aa7c429d-b717-40b6-a4dc-696bd75a873b": 1,
+  "issuer|did:sov:VV9pK5ZrLPRwYmotgACPkC": 2,
+  "issuanceDate|2025-05-18T10:17:46.728Z": 3,
+  "expirationDate|2025-02-10T15:00:00.000Z": 4,
+  "id|Gtw58xLhejueHwEZtbmmQ5": 5,
+  "ticketNumber|5ea83195-c279-4207-b23d-315c45bb8cfb": 6,
+  "ticketToken|vcData.reservedTicket.ticketToken": 7,
+  "name|Additional Concert 1": 8,
+  "id|did:sov:VV9pK5ZrLPRwYmotgACPkC": 9,
+  "name|Gtw58xLhejueHwEZtbmmQ5": 10,
+  "type|Ed25519Signature2020": 11,
+  "created|2025-05-18T10:17:46.736Z": 12,
+  "proofPurpose|assertionMethod": 13,
+  "verificationMethod|GXUnLHyrYogGzyeiFLXdLv9EjEy8ZJN7XFnuSuN3Dn9M#keys-1": 14,
+  "jws|eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..8X7IqE0UR4DOCODvJ_H5Gyv3UziSaofHZRR26Q48U1xRNK0ViYKdjde867LNvuJYQNyQHYx2bF8ZUNG7TORtCA": 15,
+  "holder|did:sov:Gtw58xLhejueHwEZtbmmQ5": 16,
+  "created|2025-05-18T10:45:44.971Z": 17,
+  "verificationMethod|did:sov:Gtw58xLhejueHwEZtbmmQ5#key-1": 18,
+  "jws|eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..KevhjfPxQUwZosgyLmVJgEI8XQKd1CYB-ZuYgTPBxwM6bZLdlZeM75MAYviHiGjlflrvfHFsFxCwOSwG1WRWCQ": 19
+}
